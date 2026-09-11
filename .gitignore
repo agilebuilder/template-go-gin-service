@@ -1,0 +1,23 @@
+# 构建产物
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# 测试与覆盖率
+*.test
+*.out
+coverage.html
+
+# 依赖目录（如需 vendor 模式可自行开启）
+vendor/
+
+# IDE
+.idea/
+.vscode/
+
+# 日志与本地文件
+*.log
+*.local

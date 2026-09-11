@@ -1,0 +1,6 @@
+server:
+  port: <%= port %>
+  mode: debug # debug | release | test
+
+log:
+  level: info # debug | info | warn | error

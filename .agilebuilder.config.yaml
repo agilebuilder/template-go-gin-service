@@ -1,0 +1,70 @@
+version: "1.0"
+name: go-gin-service
+description: Go 1.22 + Gin HTTP 服务模板，含分层结构、配置加载、中间件与示例测试
+variables:
+  enabled: true
+  delimiter: "%"
+  filePatterns:
+    mode: include
+    patterns:
+      - go.mod
+      - config.yaml
+      - Makefile
+      - README.md
+      - AGENTS.md
+      - cmd/**/*.go
+      - internal/router/**/*.go
+      - internal/handler/hello.go
+      - internal/handler/hello_test.go
+      - internal/service/**/*.go
+  inquirerQuestions:
+    - name: projectName
+      type: input
+      message: 项目名称
+      default: demo-service
+      required: true
+    - name: modulePath
+      type: input
+      message: Go module 路径（go.mod 的 module 行）
+      default: github.com/example/demo-service
+    - name: description
+      type: input
+      message: 项目描述
+      default: 一个 Go HTTP 服务
+    - name: author
+      type: input
+      message: 作者名称（可留空）
+      default: ""
+    - name: port
+      type: number
+      message: 服务监听端口
+      default: 8080
+hooks:
+  after_write:
+    scriptType: shell
+    script: git init && git add -A && git commit -m "chore: init project from template"
+    errorHandling: warn
+market:
+  slug: go-gin-service
+  name: Go Gin 微服务模板
+  summary: 基于 Go 1.22 与 Gin 的分层 HTTP 服务脚手架，开箱即用的配置、中间件与测试示例
+  description: |
+    ## 简介
+
+    一个遵循 Go 社区主流布局的 Gin HTTP 服务模板，适合快速启动 REST API / 微服务项目。
+
+    ## 特性
+
+    - 标准分层结构：`cmd` / `internal`（config、handler、service、model、middleware、router）/ `pkg`
+    - 使用 Viper 加载 YAML 配置并支持环境变量覆盖
+    - 内置日志与 panic 恢复中间件
+    - 内置 `/healthz` 健康检查与 `/api/v1/hello` 示例接口
+    - 基于 httptest 的接口测试示例
+    - 附带 Makefile（build / run / test / vet / tidy）
+  category: 后端服务
+  tags:
+    - Go
+    - Gin
+    - 微服务
+    - REST API
+  version: 1.0.0
