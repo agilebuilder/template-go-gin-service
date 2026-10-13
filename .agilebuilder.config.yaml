@@ -68,3 +68,17 @@ market:
     - 微服务
     - REST API
   version: 1.0.0
+  gitUrl: https://github.com/agilebuilder/template-go-gin-service.git
+  defaultBranch: main
+  englishMetadata:
+    name: Go Gin service
+    summary: Layered Go HTTP service with Gin, configuration, middleware and tests.
+    description: A Go service starter organized into configuration, routing,
+      handlers, services and models. Includes logging and panic recovery
+      middleware, health checks and httptest examples.
+    category: Backend services
+    tags:
+      - Go
+      - Gin
+      - REST API
+      - Microservices
