@@ -1,17 +1,17 @@
-// Package service 存放业务逻辑（服务层）。
+// Package service holds business logic (service layer).
 package service
 
 import "<%= modulePath %>/internal/model"
 
-// HelloService 是示例业务服务。
+// HelloService is the example business service.
 type HelloService struct{}
 
-// NewHelloService 创建 HelloService。
+// NewHelloService creates a HelloService.
 func NewHelloService() *HelloService {
 	return &HelloService{}
 }
 
-// Greet 根据名字生成问候语，名字为空时使用 world。
+// Greet builds a greeting for the given name, defaulting to world when empty.
 func (s *HelloService) Greet(name string) model.HelloResponse {
 	if name == "" {
 		name = "world"

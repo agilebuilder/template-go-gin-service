@@ -1,4 +1,4 @@
-// Package middleware 提供通用的 Gin 中间件。
+// Package middleware provides generic Gin middleware.
 package middleware
 
 import (
@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Logger 记录每个请求的方法、路径、状态码与耗时。
+// Logger logs the method, path, status code and latency of every request.
 func Logger() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		start := time.Now()

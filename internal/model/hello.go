@@ -1,7 +1,7 @@
-// Package model 存放数据结构与领域模型。
+// Package model holds data structures and domain models.
 package model
 
-// HelloResponse 是问候接口的响应体。
+// HelloResponse is the response body of the greeting endpoint.
 type HelloResponse struct {
 	Message string `json:"message"`
 }

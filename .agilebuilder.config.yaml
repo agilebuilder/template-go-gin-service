@@ -1,6 +1,6 @@
 version: "1.0"
 name: go-gin-service
-description: Go 1.22 + Gin HTTP 服务模板，含分层结构、配置加载、中间件与示例测试
+description: Go 1.22 + Gin HTTP service template with layered structure, config loading, middleware and example tests
 variables:
   enabled: true
   delimiter: "%"
@@ -11,6 +11,7 @@ variables:
       - config.yaml
       - Makefile
       - README.md
+      - README.zh-CN.md
       - AGENTS.md
       - cmd/**/*.go
       - internal/router/**/*.go
@@ -20,24 +21,24 @@ variables:
   inquirerQuestions:
     - name: projectName
       type: input
-      message: 项目名称
+      message: Project name
       default: demo-service
       required: true
     - name: modulePath
       type: input
-      message: Go module 路径（go.mod 的 module 行）
+      message: Go module path (the module line in go.mod)
       default: github.com/example/demo-service
     - name: description
       type: input
-      message: 项目描述
-      default: 一个 Go HTTP 服务
+      message: Project description
+      default: A Go HTTP service
     - name: author
       type: input
-      message: 作者名称（可留空）
+      message: Author name (optional)
       default: ""
     - name: port
       type: number
-      message: 服务监听端口
+      message: Server listen port
       default: 8080
 hooks:
   after_write:

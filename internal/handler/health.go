@@ -1,4 +1,4 @@
-// Package handler 存放 HTTP 处理器（控制器层）。
+// Package handler holds HTTP handlers (controller layer).
 package handler
 
 import (
@@ -7,15 +7,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// HealthHandler 提供健康检查接口。
+// HealthHandler provides the health check endpoint.
 type HealthHandler struct{}
 
-// NewHealthHandler 创建 HealthHandler。
+// NewHealthHandler creates a HealthHandler.
 func NewHealthHandler() *HealthHandler {
 	return &HealthHandler{}
 }
 
-// Check 处理 GET /healthz。
+// Check handles GET /healthz.
 func (h *HealthHandler) Check(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"status": "ok"})
 }

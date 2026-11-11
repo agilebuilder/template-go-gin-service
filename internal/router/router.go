@@ -1,4 +1,4 @@
-// Package router 负责注册路由与中间件。
+// Package router registers routes and middleware.
 package router
 
 import (
@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// New 构建一个挂载了全部路由与中间件的 Gin 引擎。
+// New builds a Gin engine with all routes and middleware mounted.
 func New() *gin.Engine {
 	r := gin.New()
 	r.Use(middleware.Logger(), middleware.Recovery())

@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Recovery 捕获 handler 中的 panic，返回 500 而不是让进程崩溃。
+// Recovery recovers from panics in handlers, returning 500 instead of crashing the process.
 func Recovery() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		defer func() {

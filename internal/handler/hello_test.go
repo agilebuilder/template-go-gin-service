@@ -17,15 +17,15 @@ func TestHello(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	if w.Code != http.StatusOK {
-		t.Fatalf("期望状态码 200，实际 %d", w.Code)
+		t.Fatalf("expected status 200, got %d", w.Code)
 	}
 
 	var body map[string]string
 	if err := json.Unmarshal(w.Body.Bytes(), &body); err != nil {
-		t.Fatalf("解析响应失败: %v", err)
+		t.Fatalf("failed to parse response: %v", err)
 	}
 	if body["message"] != "hello, gin" {
-		t.Fatalf("期望 message 为 \"hello, gin\"，实际 %q", body["message"])
+		t.Fatalf("expected message \"hello, gin\", got %q", body["message"])
 	}
 }
 
@@ -38,10 +38,10 @@ func TestHelloDefaultName(t *testing.T) {
 
 	var body map[string]string
 	if err := json.Unmarshal(w.Body.Bytes(), &body); err != nil {
-		t.Fatalf("解析响应失败: %v", err)
+		t.Fatalf("failed to parse response: %v", err)
 	}
 	if body["message"] != "hello, world" {
-		t.Fatalf("期望 message 为 \"hello, world\"，实际 %q", body["message"])
+		t.Fatalf("expected message \"hello, world\", got %q", body["message"])
 	}
 }
 
@@ -53,6 +53,6 @@ func TestHealthz(t *testing.T) {
 	r.ServeHTTP(w, req)
 
 	if w.Code != http.StatusOK {
-		t.Fatalf("期望状态码 200，实际 %d", w.Code)
+		t.Fatalf("expected status 200, got %d", w.Code)
 	}
 }

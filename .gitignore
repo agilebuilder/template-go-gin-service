@@ -1,4 +1,4 @@
-# 构建产物
+# Build artifacts
 bin/
 *.exe
 *.exe~
@@ -6,18 +6,18 @@ bin/
 *.so
 *.dylib
 
-# 测试与覆盖率
+# Test and coverage outputs
 *.test
 *.out
 coverage.html
 
-# 依赖目录（如需 vendor 模式可自行开启）
+# Dependency directory (enable vendor mode manually if needed)
 vendor/
 
 # IDE
 .idea/
 .vscode/
 
-# 日志与本地文件
+# Logs and local files
 *.log
 *.local
