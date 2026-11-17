@@ -47,39 +47,49 @@ hooks:
     errorHandling: warn
 market:
   slug: go-gin-service
-  name: Go Gin 微服务模板
-  summary: 基于 Go 1.22 与 Gin 的分层 HTTP 服务脚手架，开箱即用的配置、中间件与测试示例
+  name: Go Gin service
+  summary: Layered Go HTTP service with Gin, configuration, middleware and tests.
   description: |
-    ## 简介
+    ## Overview
 
-    一个遵循 Go 社区主流布局的 Gin HTTP 服务模板，适合快速启动 REST API / 微服务项目。
+    A Gin HTTP service template following the standard Go community layout, ideal for quickly starting REST API / microservice projects.
 
-    ## 特性
+    ## Features
 
-    - 标准分层结构：`cmd` / `internal`（config、handler、service、model、middleware、router）/ `pkg`
-    - 使用 Viper 加载 YAML 配置并支持环境变量覆盖
-    - 内置日志与 panic 恢复中间件
-    - 内置 `/healthz` 健康检查与 `/api/v1/hello` 示例接口
-    - 基于 httptest 的接口测试示例
-    - 附带 Makefile（build / run / test / vet / tidy）
-  category: 后端服务
+    - Standard layering: `cmd` / `internal` (config, handler, service, model, middleware, router) / `pkg`
+    - YAML configuration via Viper with environment variable overrides
+    - Built-in logging and panic recovery middleware
+    - Built-in `/healthz` health check and `/api/v1/hello` example endpoint
+    - httptest-based endpoint test example
+    - Makefile included (build / run / test / vet / tidy)
+  category: Backend services
   tags:
     - Go
     - Gin
-    - 微服务
     - REST API
+    - Microservices
   version: 1.0.0
   gitUrl: https://github.com/agilebuilder/template-go-gin-service.git
   defaultBranch: main
-  englishMetadata:
-    name: Go Gin service
-    summary: Layered Go HTTP service with Gin, configuration, middleware and tests.
-    description: A Go service starter organized into configuration, routing,
-      handlers, services and models. Includes logging and panic recovery
-      middleware, health checks and httptest examples.
-    category: Backend services
+  metadata-zh:
+    name: Go Gin 微服务模板
+    summary: 基于 Go 1.22 与 Gin 的分层 HTTP 服务脚手架，开箱即用的配置、中间件与测试示例
+    description: |
+      ## 简介
+
+      一个遵循 Go 社区主流布局的 Gin HTTP 服务模板，适合快速启动 REST API / 微服务项目。
+
+      ## 特性
+
+      - 标准分层结构：`cmd` / `internal`（config、handler、service、model、middleware、router）/ `pkg`
+      - 使用 Viper 加载 YAML 配置并支持环境变量覆盖
+      - 内置日志与 panic 恢复中间件
+      - 内置 `/healthz` 健康检查与 `/api/v1/hello` 示例接口
+      - 基于 httptest 的接口测试示例
+      - 附带 Makefile（build / run / test / vet / tidy）
+    category: 后端服务
     tags:
       - Go
       - Gin
+      - 微服务
       - REST API
-      - Microservices
